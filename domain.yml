@@ -1,0 +1,80 @@
+intents:
+  - begroeting
+  - volgende_match
+  - specifieke_maand
+  - afscheid
+  - bedanking
+  - out_of_scope
+  - voeg_match_toe
+  - inform
+
+entities:
+  - maand
+  - datum
+  - uur
+  - tegenstander
+  - locatie
+
+slots:
+  maand:
+    type: text
+  datum:
+    type: unfeaturized
+    auto_fill: false
+  uur:
+    type: unfeaturized
+    auto_fill: false
+  tegenstander:
+    type: unfeaturized
+    auto_fill: false
+  locatie:
+    type: unfeaturized
+    auto_fill: false
+    
+forms:
+    - match_form
+
+actions:
+  - utter_hallo
+  - utter_afscheid
+  - utter_graag_gedaan
+  - utter_default
+  - action_zoek_volgende_match
+  - action_zoek_specifieke_maand
+
+responses:
+  utter_hallo:
+  - text: "Hallo! Wat kan ik voor je doen?"
+  - text: "Hey! Zeg maar wat ik voor je kan doen"
+
+  utter_afscheid:
+  - text: "Bye"
+  - text: "Salu"
+  - text: "Tot de volgende!"
+
+  utter_graag_gedaan:
+  - text: "Graag gedaan"
+  - text: "Geen probleem"
+
+  utter_default:
+  - text: "Dit is niet iets waarvoor ik ben opgeleid"
+
+  utter_ask_datum:
+    - text: "Wat is de datum van de match? Dag + maand graag"
+    - text: "Wanneer wordt de match gespeeld? Dag en maand graag"
+
+  utter_ask_uur:
+    - text: "Om hoelaat?"
+    - text: "Welk uur?"
+
+  utter_ask_tegenstander:
+    - text: "Tegen wie?"
+    - text: "Wie is de tegenstander?"
+
+  utter_ask_locatie:
+    - text: "Waar gaat de match door?"
+    - text: "Graag had ik de locatie van de match geweten"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
