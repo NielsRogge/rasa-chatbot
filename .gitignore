@@ -15,5 +15,5 @@ models
 models/
 
 # Results and tests
-results/
-tests/
+rasa/results/
+rasa/tests/

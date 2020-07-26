@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Goal Diggers website</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Dit is de website van de Goal Diggers.</h1>
+    <p>Welkom!</p>
+
+    <img src="/static/Goal_Diggers_Logo.jpg" alt="Goal Diggers logo" width="200"
+         height="200">
+    
+    <div id="webchat"></div>
+        <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+        <script>
+        WebChat.default.init({
+            selector: "#webchat",
+            initPayload: "/begroeting",
+            customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+            socketUrl: "http://localhost:5005",
+            socketPath: "/socket.io/",
+            title: "Goal Diggers chatbot",
+            subtitle: "Vraag naar speeldata van de Goal Diggers",
+            params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+        })
+        </script>
+    </div>
+</body>
+</html>

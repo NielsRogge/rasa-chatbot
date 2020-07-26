@@ -40,6 +40,7 @@
 - wordt er gespeeld in [maart](maand)
 - toon mij de matchen in [mei](maand)
 - zijn er matchen in [juni](maand)
+- zijn er matchen voorzien in [september](maand)?
 
 ## lookup:maand
 data/lookup_tables/maanden.txt
