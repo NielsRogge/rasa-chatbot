@@ -14,6 +14,8 @@ from rasa_sdk.forms import FormAction
 import pandas as pd
 from babel.dates import format_date
 from difflib import SequenceMatcher
+import locale
+from datetime import datetime
 
 class ActionZoekVolgendeMatch(Action):
 
@@ -26,13 +28,11 @@ class ActionZoekVolgendeMatch(Action):
 
          # read in data
          data = pd.read_excel("Matchen.xlsx")
-         # set 'Datum' column as index of the dataframe such that we can search for the nearest date
-         df = data.set_index("Datum")
-         # filter rows
-         data_row = data.iloc[df.index.get_loc(pd.Timestamp.now(), method='nearest')]
+         # filter rows 
+         data_row = data[data.Datum >= pd.Timestamp.now()].iloc[0]
 
          if data_row is not None:
-            message = "De volgende match is {0} om {1}, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Uur, data_row.Tegenstander)
+            message = "De volgende match is {0} om {1}, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
             message += " Locatie: {0}".format(data_row.Locatie)
          else:
              message = "Er zijn momenteel geen matchen gepland."
@@ -90,7 +90,7 @@ class ActionZoekSpecifiekeMaand(Action):
             message = "In " + month_normalized + " staat het volgende gepland:\n"
             for x in rows.iterrows():
                 data_row = x[1]
-                message += "- {0} om {1}, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Uur, data_row.Tegenstander)
+                message += "- {0} om {1}, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
                 message += " Locatie: {0}".format(data_row.Locatie) + "\n"
          
          dispatcher.utter_message(message)
@@ -98,7 +98,7 @@ class ActionZoekSpecifiekeMaand(Action):
          return []
 
 class MatchForm(FormAction):
-    """Example of a custom form action"""
+    """Custom form action for adding matches to the Excel file"""
 
     def name(self) -> Text:
         """Unique identifier of the form"""
@@ -111,6 +111,30 @@ class MatchForm(FormAction):
 
         return ["datum", "uur", "tegenstander", "locatie"]
 
+    def slot_mappings(self) -> Dict[Text, Any]:
+        """A dictionary to map required slots to
+        - an extracted entity
+        - intent: value pairs
+        - a whole message
+        or a list of them, where a first match will be picked"""
+
+        return {
+            "datum": self.from_text(),
+            "uur": [
+                self.from_entity(
+                    entity="uur", intent=["inform", "voeg_match_toe"]),
+                self.from_text(),
+            ],
+            "tegenstander": [
+                self.from_entity(entity="tegenstander", intent=["inform", "voeg_match_toe"]),
+                self.from_text(),
+            ],
+            "locatie": [
+                self.from_entity(entity="locatie", intent=["inform", "voeg_match_toe"]),
+                self.from_text(),
+            ]
+        }
+
     def submit(
         self,
         dispatcher: CollectingDispatcher,
@@ -120,7 +144,36 @@ class MatchForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
 
-        message= "Bedankt voor de info! Het toevoegen aan de excel moet ik nog implementeren"
-        
+        datum = tracker.get_slot("datum")
+        uur = tracker.get_slot("uur")
+        tegenstander = tracker.get_slot("tegenstander")
+        locatie = tracker.get_slot("locatie")
+
+        # normalize date (does not work if there's a typo)
+        locale.setlocale(locale.LC_ALL, 'nl_BE')
+        datum_normalized = datetime.strptime(datum, '%d %B')
+        datum_normalized = datum_normalized.replace(year=datetime.now().year)
+
+        # normalize hour and apply it to the normalized date
+        uur_normalized =""
+        for character in uur:
+            if character.isdigit(): 
+                uur_normalized += character
+        datum_normalized = datum_normalized.replace(hour=int(uur_normalized))
+        datum_normalized = datum_normalized.strftime('%Y-%m-%d %X')
+
+        # append to dataframe and sort
+        data = pd.read_excel("Matchen.xlsx")
+        new_data_row = {'Datum': pd.Timestamp(datum_normalized), 
+                'Tegenstander': tegenstander,
+                'Locatie': locatie}
+
+        data = data.append(new_data_row, ignore_index=True, sort=True)
+        data = data.sort_values(by='Datum')
+
+        data.to_excel("Matchen.xlsx", index=False)
+
+        message= "Bedankt voor de info! Ik heb de match toegevoegd in excel :)"
+
         dispatcher.utter_message(message)
         return []

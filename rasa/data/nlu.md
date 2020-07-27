@@ -74,6 +74,7 @@ data/lookup_tables/maanden.txt
 - [19 uur](uur)
 - [19u45](uur)
 - om [20 u](uur)
+- [20u](uur)
 - [21u30](uur)
 - [22 u](uur)
 - [forza feesters](tegenstander)
