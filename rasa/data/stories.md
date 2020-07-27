@@ -38,6 +38,24 @@
 * bedanking
     - utter_graag_gedaan
 
+## match toevoegen happy path waarbij datum, tegenstander en locatie reeds meegegeven worden
+* begroeting
+    - utter_hallo
+* voeg_match_toe{"datum":"19 december", "tegenstander":"Lotenhulle", "locatie": "Sporthal Oostbroek Nevele"}
+    - match_form
+    - form{"name": "match_form"}
+    - form{"name": null}
+* bedanking
+    - utter_graag_gedaan
+
+## match toevoegen happy path waarbij datum, uur en tegenstander reeds meegegeven worden
+* voeg_match_toe{"datum":"26 augustus", "uur": "18u", "tegenstander":"FC De Rougekes"}
+    - match_form
+    - form{"name": "match_form"}
+    - form{"name": null}
+* bedanking
+    - utter_graag_gedaan
+
 ## zeg afscheid
 * afscheid
   - utter_afscheid

@@ -16,6 +16,7 @@ from babel.dates import format_date
 from difflib import SequenceMatcher
 import locale
 from datetime import datetime
+import dateutil.parser as parser
 
 class ActionZoekVolgendeMatch(Action):
 
@@ -32,7 +33,7 @@ class ActionZoekVolgendeMatch(Action):
          data_row = data[data.Datum >= pd.Timestamp.now()].iloc[0]
 
          if data_row is not None:
-            message = "De volgende match is {0} om {1}, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
+            message = "De volgende match is {0} om {1} uur, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
             message += " Locatie: {0}".format(data_row.Locatie)
          else:
              message = "Er zijn momenteel geen matchen gepland."
@@ -90,7 +91,7 @@ class ActionZoekSpecifiekeMaand(Action):
             message = "In " + month_normalized + " staat het volgende gepland:\n"
             for x in rows.iterrows():
                 data_row = x[1]
-                message += "- {0} om {1}, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
+                message += "- {0} om {1} uur, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
                 message += " Locatie: {0}".format(data_row.Locatie) + "\n"
          
          dispatcher.utter_message(message)
@@ -119,10 +120,12 @@ class MatchForm(FormAction):
         or a list of them, where a first match will be picked"""
 
         return {
-            "datum": self.from_text(),
+            "datum": [
+                self.from_entity(entity="datum", intent=["inform", "voeg_match_toe"]),
+                self.from_text(),
+            ],
             "uur": [
-                self.from_entity(
-                    entity="uur", intent=["inform", "voeg_match_toe"]),
+                self.from_entity(entity="uur", intent=["inform", "voeg_match_toe"]),
                 self.from_text(),
             ],
             "tegenstander": [
@@ -149,17 +152,29 @@ class MatchForm(FormAction):
         tegenstander = tracker.get_slot("tegenstander")
         locatie = tracker.get_slot("locatie")
 
-        # normalize date (does not work if there's a typo)
+        # step 1: normalize date (does not work if there's a typo)
         locale.setlocale(locale.LC_ALL, 'nl_BE')
         datum_normalized = datetime.strptime(datum, '%d %B')
         datum_normalized = datum_normalized.replace(year=datetime.now().year)
 
-        # normalize hour and apply it to the normalized date
-        uur_normalized =""
+        # step 2: normalize hour using the parser of the dateutil library 
+        # first convert to English format (as the parser expects English hour)
+        if "uur" in uur:
+            uur = uur.replace("uur", "h").strip()
+        elif "u" in uur:
+            uur = uur.replace("u", "h").strip()
+        elif ":" in uur:
+            uur = uur.replace(":", "h").strip()
+        uur_normalized = ""
         for character in uur:
-            if character.isdigit(): 
+            if character.isdigit() or character == "h":
                 uur_normalized += character
-        datum_normalized = datum_normalized.replace(hour=int(uur_normalized))
+
+        hour = parser.parse(uur_normalized).hour
+        minutes = parser.parse(uur_normalized).minute
+
+        # step 3: apply normalized hour to the normalized date
+        datum_normalized = datum_normalized.replace(hour=hour, minute=minutes)
         datum_normalized = datum_normalized.strftime('%Y-%m-%d %X')
 
         # append to dataframe and sort
