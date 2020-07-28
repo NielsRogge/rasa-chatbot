@@ -138,6 +138,62 @@ class MatchForm(FormAction):
             ]
         }
 
+    def validate_datum(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """Validate 'datum' value."""
+
+        try:
+            # check if we can convert the value to a datetime object (does not work if there's a typo)
+            locale.setlocale(locale.LC_ALL, 'nl_BE')
+            datum_normalized = datetime.strptime(value, '%d %B')
+            datum_normalized = datum_normalized.replace(year=datetime.now().year)
+
+            # validation succeeded, however we do not send the
+            # normalized datetime object as this is not JSON serializable
+            return {"datum": value}
+        except:
+            dispatcher.utter_message(template="utter_wrong_datum")
+            # validation failed, set this slot to None, meaning the
+            # user will be asked for the slot again
+            return {"datum": None}
+    
+    def validate_uur(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """Validate (and normalize) 'uur' value."""
+
+        try:
+            uur = value.lower()
+            
+            if "uur" in uur:
+                uur = uur.replace("uur", "h").strip()
+            elif "u" in uur:
+                uur = uur.replace("u", "h").strip()
+            elif ":" in uur:
+                uur = uur.replace(":", "h").strip()
+            uur_normalized = ""
+            for character in uur:
+                if character.isdigit() or character == "h":
+                    uur_normalized += character
+            
+            parser.parse(uur_normalized)
+            # validation succeeded, set the value of the "uur" slot to normalized value
+            return {"uur": uur_normalized}
+        except:
+            dispatcher.utter_message(template="utter_wrong_uur")
+            # validation failed, set this slot to None, meaning the
+            # user will be asked for the slot again
+            return {"uur": None}
+    
     def submit(
         self,
         dispatcher: CollectingDispatcher,
@@ -148,36 +204,23 @@ class MatchForm(FormAction):
             after all required slots are filled"""
 
         datum = tracker.get_slot("datum")
-        uur = tracker.get_slot("uur")
+        uur_normalized = tracker.get_slot("uur")
         tegenstander = tracker.get_slot("tegenstander")
         locatie = tracker.get_slot("locatie")
 
-        # step 1: normalize date (does not work if there's a typo)
+        # step 1: normalize date 
         locale.setlocale(locale.LC_ALL, 'nl_BE')
         datum_normalized = datetime.strptime(datum, '%d %B')
         datum_normalized = datum_normalized.replace(year=datetime.now().year)
-
-        # step 2: normalize hour using the parser of the dateutil library 
-        # first convert to English format (as the parser expects English hour)
-        if "uur" in uur:
-            uur = uur.replace("uur", "h").strip()
-        elif "u" in uur:
-            uur = uur.replace("u", "h").strip()
-        elif ":" in uur:
-            uur = uur.replace(":", "h").strip()
-        uur_normalized = ""
-        for character in uur:
-            if character.isdigit() or character == "h":
-                uur_normalized += character
-
+        
+        # step 2: apply normalized hour to the normalized date
         hour = parser.parse(uur_normalized).hour
         minutes = parser.parse(uur_normalized).minute
 
-        # step 3: apply normalized hour to the normalized date
         datum_normalized = datum_normalized.replace(hour=hour, minute=minutes)
         datum_normalized = datum_normalized.strftime('%Y-%m-%d %X')
 
-        # append to dataframe and sort
+        # step 3: append to dataframe and sort
         data = pd.read_excel("Matchen.xlsx")
         new_data_row = {'Datum': pd.Timestamp(datum_normalized), 
                 'Tegenstander': tegenstander,

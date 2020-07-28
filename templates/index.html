@@ -1,8 +1,11 @@
 <!doctype html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Goal Diggers website</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Dit is de website van de Goal Diggers.</h1>
@@ -12,7 +15,6 @@
          height="200">
     
     <div id="webchat"></div>
-        <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
         <script>
         WebChat.default.init({
             selector: "#webchat",

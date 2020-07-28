@@ -1,0 +1,19 @@
+.rw-conversation-container .rw-header {
+    background-color: red;
+}
+
+.rw-conversation-container .rw-client {
+    background-color: black;
+}
+
+.rw-conversation-container .rw-close-button {
+    background-color: red;
+}
+
+.rw-conversation-container .rw-send-icon {
+    background-color: black;
+}
+
+.rw-launcher {
+    background-color: red;
+}

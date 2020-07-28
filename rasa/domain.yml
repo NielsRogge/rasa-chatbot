@@ -41,11 +41,13 @@ actions:
   - utter_default
   - action_zoek_volgende_match
   - action_zoek_specifieke_maand
+  - utter_wrong_datum
+  - utter_wrong_uur
 
 responses:
   utter_hallo:
-  - text: "Hallo! Wat kan ik voor je doen?"
-  - text: "Hey! Zeg maar wat ik voor je kan doen"
+  - text: "Hallo! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand!"
+  - text: "Hey! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand!"
 
   utter_afscheid:
   - text: "Bye"
@@ -63,9 +65,16 @@ responses:
     - text: "Wat is de datum van de match? Dag + maand graag"
     - text: "Wanneer wordt de match gespeeld? Dag en maand graag"
 
+  utter_wrong_datum:
+    - text: "De datum die je hebt ingegeven is niet correct of bevat een typo."
+    - text: "Dat heb ik niet goed begrepen."
+
   utter_ask_uur:
     - text: "Om hoelaat?"
     - text: "Welk uur?"
+
+  utter_wrong_uur:
+    - text: "Het uur dat je hebt ingegeven (bv. 19u30) is niet correct of bevat een typo."
 
   utter_ask_tegenstander:
     - text: "Tegen wie?"
