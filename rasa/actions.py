@@ -151,7 +151,6 @@ class MatchForm(FormAction):
             # check if we can convert the value to a datetime object (does not work if there's a typo)
             locale.setlocale(locale.LC_ALL, 'nl_BE')
             datum_normalized = datetime.strptime(value, '%d %B')
-            datum_normalized = datum_normalized.replace(year=datetime.now().year)
 
             # validation succeeded, however we do not send the
             # normalized datetime object as this is not JSON serializable

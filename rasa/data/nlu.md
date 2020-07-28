@@ -41,6 +41,8 @@
 - toon mij de matchen in [mei](maand)
 - zijn er matchen in [juni](maand)
 - zijn er matchen voorzien in [september](maand)?
+- spelen we in [oktober](maand)?
+- zijn er matchen gepland in [januari](maand)
 
 ## lookup:maand
 data/lookup_tables/maanden.txt
@@ -48,6 +50,7 @@ data/lookup_tables/maanden.txt
 ## intent:voeg_match_toe
 - nieuwe match
 - ik zou graag een nieuwe match toevoegen
+- [12 oktober](datum) spelen we [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"} tegen [Bevergem United](tegenstander)
 - ik had graag de volgende match toegevoegd: zaterdag [12 augustus 2020](datum) tegen [fc doomkerke](tegenstander) 
 - we spelen een match tegen [jacobs rangers](tegenstander), [27 mei](datum) om [15u](uur)
 - we spelen tegen [fc de rougekes](tegenstander)
@@ -60,16 +63,22 @@ data/lookup_tables/maanden.txt
 - [12 oktober](datum) match tegen [team jess](tegenstander)
 - maandagavond [27 07](datum) kan [scopo](tegenstander) tegen ons
 
+## lookup:datum
+data/lookup_tables/datums.txt
+
 ## intent:inform
-- [2 juni](datum)
-- [4 maart](datum)
-- [2 oktober](datum)
-- [27 december](datum)
+- [10 januari](datum)
 - [16 februari](datum)
-- [28 mei](datum)
+- [4 maart](datum)
 - [19 april](datum)
+- [28 mei](datum)
+- [2 juni](datum)
+- [23 juli](datum)
 - [14 augustus](datum)
+- [29 september](datum)
+- [2 oktober](datum)
 - [18 november](datum)
+- [27 december](datum)
 - [15u](uur)
 - [16 uur](uur)
 - om [18 uur](uur)
@@ -87,9 +96,13 @@ data/lookup_tables/maanden.txt
 - [scopo](tegenstander)
 - tegen [biercelona](tegenstander)
 - [oostbroek](locatie)
-- [sporthal oostbroek](locatie) 
-- [oostbroek nevele](locatie)
-- [nevele](locatie)
+- we spelen [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- in [nevele]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- tis [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- [sporthal oostbroek]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- [oostbroek nevele]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- [nevele]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - [rozenbroeken gent](locatie)
 - [rozenbroeken](locatie)
 - het [gusb gent](locatie)
