@@ -46,20 +46,20 @@ actions:
 
 responses:
   utter_hallo:
-  - text: "Hallo! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand!"
-  - text: "Hey! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand!"
+  - text: "Hallo! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand! ⚽"
+  - text: "Hey! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand! ⚽"
 
   utter_afscheid:
-  - text: "Bye"
-  - text: "Salu"
-  - text: "Tot de volgende!"
+  - text: "Bye 👋"
+  - text: "Salu 👋"
+  - text: "Tot de volgende! 👋"
 
   utter_graag_gedaan:
-  - text: "Graag gedaan"
-  - text: "Geen probleem"
+  - text: "Graag gedaan ✌"
+  - text: "Geen probleem ✌"
 
   utter_default:
-  - text: "Dit is niet iets waarvoor ik ben opgeleid"
+  - text: "Dit is niet iets waarvoor ik ben opgeleid 🤔"
 
   utter_ask_datum:
     - text: "Wat is de datum van de match? Dag + maand graag"

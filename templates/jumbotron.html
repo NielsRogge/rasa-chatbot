@@ -6,13 +6,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Jumbotron Template · Bootstrap</title>
+    <title>Goal Diggers Home</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
     <!-- Bootstrap core CSS -->
-<link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -33,47 +34,52 @@
     <!-- Custom styles for this template -->
     <link href="../static/css/jumbotron.css" rel="stylesheet">
   </head>
+  
   <body>
+    <!-- Horizontal avbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">ZVC Goal Diggers</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="../static/Goal_Diggers_Logo.jpg" alt="Logo" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Historie</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Teaminfo</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">2019-2020</a>
-          <a class="dropdown-item" href="#">2020-2021</a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Historie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Teaminfo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">2019-2020</a>
+                <a class="dropdown-item" href="#">2020-2021</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+     </nav>
 
-<main role="main">
+     <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-3">ZVC Goal Diggers</h1>
       <p>Welkom op de website van zaalvoetbalploeg de Goal Diggers! Praat gerust eens met onze chatbot, rechtsonder op deze webpagina.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Kom meer te weten &raquo;</a></p>
     </div>
   </div>
 
@@ -82,17 +88,17 @@
     <div class="row">
       <div class="col-md-4">
         <h2>Historie</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p>Onze zaalvoetbalploeg werd opgericht in 2019. In ons eerste jaar vierden we meteen de promotie naar 2e klasse. </p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Spelers</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p>Onze ploeg bestaat momenteel uit 9 vaste spelers. </p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Kalender</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p>De kalender voor toekomstige matchen wordt momenteel opgesteld.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
     </div>
@@ -101,26 +107,31 @@
 
   </div> <!-- /container -->
 
-</main>
+     </main>
 
-<footer class="container">
-  <p>&copy; Goal Diggers 2020</p>
-</footer>
-<div id="webchat"></div>
-        <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
-        <script>
-        WebChat.default.init({
-            selector: "#webchat",
-            initPayload: "/begroeting",
-            customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
-            socketUrl: "http://localhost:5005",
-            socketPath: "/socket.io/",
-            title: "Goal Diggers chatbot",
-            subtitle: "Vraag naar speeldata van de Goal Diggers",
-            params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
-        })
-        </script>
-    </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../static/js/bootstrap.bundle.js"></script></body>
+     <!-- Footer -->
+     <footer class="container">
+      <p>&copy; Goal Diggers 2020</p>
+     </footer>
+     <!-- Webchat widget -->
+     <div id="webchat"></div>
+     <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+     <script>
+       WebChat.default.init({
+         selector: "#webchat",
+         initPayload: "/begroeting",
+         customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+         socketUrl: "https://8dcc04917659.ngrok.io",
+         socketPath: "/socket.io/",
+         title: "Goal Diggers chatbot",
+         subtitle: "Vraag naar speeldata",
+         params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+       })
+     </script>
+     </div>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+     <script src="../static/js/bootstrap.bundle.js"></script>
+  </body>
 </html>

@@ -10,8 +10,8 @@
     background-color: red;
 }
 
-.rw-conversation-container .rw-send-icon {
-    background-color: black;
+.rw-send-icon-ready {
+    fill: black !important;
 }
 
 .rw-launcher {

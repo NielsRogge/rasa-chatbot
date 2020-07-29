@@ -2,3 +2,22 @@
 body {
   padding-top: 3.5rem;
 }
+
+/* Set height of navbar image to same as that of the navbar */
+.navbar-header img {
+  height: 40px;
+  margin: 5px;
+}
+
+/* Set button of home page to a different color */
+.btn-primary {
+  color: #fff;
+  background-color: #f32011;
+  border-color:#f32011;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
