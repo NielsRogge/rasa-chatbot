@@ -60,6 +60,14 @@
 * afscheid
   - utter_afscheid
 
+## simple acknowledgement
+* acknowledge
+  - utter_positieve_feedback
+
+## restart conversation
+* misunderstanding
+  - action_restart
+
 ## fallback story
 * out_of_scope
   - action_default_fallback

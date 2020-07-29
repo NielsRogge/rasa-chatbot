@@ -7,6 +7,8 @@ intents:
   - out_of_scope
   - voeg_match_toe
   - inform
+  - acknowledge
+  - misunderstanding
 
 entities:
   - maand
@@ -43,6 +45,7 @@ actions:
   - action_zoek_specifieke_maand
   - utter_wrong_datum
   - utter_wrong_uur
+  - utter_positieve_feedback
 
 responses:
   utter_hallo:
@@ -83,6 +86,11 @@ responses:
   utter_ask_locatie:
     - text: "Waar gaat de match door?"
     - text: "Graag had ik de locatie van de match geweten"
+
+  utter_positieve_feedback:
+    - text: "😎"
+    - text: "👍"
+    - text: "👌"
 
 session_config:
   session_expiration_time: 60

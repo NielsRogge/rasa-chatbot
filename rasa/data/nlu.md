@@ -15,6 +15,7 @@
 - daag
 - tot de volgende
 - bye
+- tot ziens
 
 ## intent:bedanking
 - bedankt
@@ -22,6 +23,23 @@
 - thanks
 - danku
 - dank u
+- thnx
+- thx
+
+## intent:acknowledge
+- ok
+- oké
+- oke nice
+- okay
+- aight
+- alright
+- k
+
+## intent:misunderstanding
+- nevermind
+- laat maar
+- sorry ik ben gemist
+- stop
 
 ## intent:volgende_match
 - wanneer is de volgende match?
@@ -29,6 +47,10 @@
 - next game
 - toon mij de volgende wedstrijd
 - wanneer is de eerstvolgende wedstrijd
+- wanneer spelen de goal diggers terug
+- welke dag is er terug match
+- volgende match please
+- volgende match plz
 
 ## intent:specifieke_maand
 - welke matchen zijn er in [juli](maand)
