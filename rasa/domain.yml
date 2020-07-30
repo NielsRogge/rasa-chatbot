@@ -46,11 +46,12 @@ actions:
   - utter_wrong_datum
   - utter_wrong_uur
   - utter_positieve_feedback
+  - utter_no_problem
 
 responses:
   utter_hallo:
-  - text: "Hallo! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand! ⚽"
-  - text: "Hey! Je kan me vragen naar de volgende match, of een overzicht van de matchen in een bepaalde maand! ⚽"
+  - text: "Hallo! Je kan me vragen naar onze volgende match, of welke matchen we spelen in een bepaalde maand! ⚽"
+  - text: "Hey! Je kan me vragen naar de volgende match, of welke matchen we spelen in een bepaalde maand! ⚽"
 
   utter_afscheid:
   - text: "Bye 👋"
@@ -91,6 +92,9 @@ responses:
     - text: "😎"
     - text: "👍"
     - text: "👌"
+
+  utter_no_problem:
+    - text: "Ok no problem 👍"
 
 session_config:
   session_expiration_time: 60

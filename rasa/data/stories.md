@@ -56,6 +56,25 @@
 * bedanking
     - utter_graag_gedaan
 
+## match toevoegen unhappy path 1
+* voeg_match_toe
+    - match_form
+    - form{"name": "match_form"}
+* misunderstanding
+    - action_deactivate_form
+    - form{"name": null}
+    - action_restart
+
+## match toevoegen unhappy path 2
+* voeg_match_toe{"datum":"10 maart"}
+    - match_form
+    - form{"name": "match_form"}
+* misunderstanding
+    - utter_no_problem
+    - action_deactivate_form
+    - form{"name": null}
+    - action_restart
+
 ## zeg afscheid
 * afscheid
   - utter_afscheid
@@ -66,6 +85,7 @@
 
 ## restart conversation
 * misunderstanding
+  - utter_no_problem
   - action_restart
 
 ## fallback story

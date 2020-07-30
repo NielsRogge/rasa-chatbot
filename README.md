@@ -1,5 +1,5 @@
 # Rasa-chatbot
-This repository contains all code for a website and associated chatbot I built. The chatbot is made using [Rasa](https://rasa.com/), an open-source machine learning framework for conversational AI. To use the Rasa chatbot on the website, a widget is used from [this Github repository](by https://github.com/botfront/rasa-webchat). 
+This repository contains all code for a website and associated chatbot I built. The chatbot is made using [Rasa](https://rasa.com/), an open-source machine learning framework for conversational AI. To use the Rasa chatbot on the website, a widget is used from [this Github repository](https://github.com/botfront/rasa-webchat). 
 
 There are 3 things which need to be run in a command prompt in order to view the website and associated chatbot in a web browser:
 - Rasa models

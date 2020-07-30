@@ -122,19 +122,19 @@ class MatchForm(FormAction):
         return {
             "datum": [
                 self.from_entity(entity="datum", intent=["inform", "voeg_match_toe"]),
-                self.from_text(),
+                self.from_text(not_intent="misunderstanding"),
             ],
             "uur": [
                 self.from_entity(entity="uur", intent=["inform", "voeg_match_toe"]),
-                self.from_text(),
+                self.from_text(not_intent="misunderstanding"),
             ],
             "tegenstander": [
-                self.from_entity(entity="tegenstander", intent=["inform", "voeg_match_toe"]),
-                self.from_text(),
+                self.from_entity(entity="tegenstander", intent="voeg_match_toe"),
+                self.from_text(not_intent="misunderstanding"),
             ],
             "locatie": [
                 self.from_entity(entity="locatie", intent=["inform", "voeg_match_toe"]),
-                self.from_text(),
+                self.from_text(not_intent="misunderstanding"),
             ]
         }
 

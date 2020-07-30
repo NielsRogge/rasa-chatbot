@@ -27,6 +27,9 @@
 - thx
 
 ## intent:acknowledge
+- super
+- nice
+- awesome
 - ok
 - oké
 - oke nice
@@ -40,6 +43,7 @@
 - laat maar
 - sorry ik ben gemist
 - stop
+- cancel
 
 ## intent:volgende_match
 - wanneer is de volgende match?
@@ -81,12 +85,16 @@ data/lookup_tables/maanden.txt
 - we spelen [23 juni](datum) tegen [azurri laarne](tegenstander)
 - de volgende wedstrijd is vrijdag [3 oktober](datum)
 - er is een match gepland tegen [zvc 't leebeekje](tegenstander)
-- zaterdag [14 december](datum) spelen we tegen [aalter](tegenstander)
+- zaterdag [14 december](datum) spelen we tegen [KSV Surdac Gent](tegenstander)
 - [12 oktober](datum) match tegen [team jess](tegenstander)
 - maandagavond [27 07](datum) kan [scopo](tegenstander) tegen ons
+- we spelen tegen [De Buikbierkes](tegenstander)
 
 ## lookup:datum
 data/lookup_tables/datums.txt
+
+## lookup:tegenstander
+data/lookup_tables/tegenstanders.txt
 
 ## intent:inform
 - [10 januari](datum)
@@ -117,7 +125,10 @@ data/lookup_tables/datums.txt
 - [voet plezier](tegenstander)
 - [scopo](tegenstander)
 - tegen [biercelona](tegenstander)
-- [oostbroek](locatie)
+- [borussia dortmund](tegenstander)
+- [team jess](tegenstander)
+- [fc de kampioenen](tegenstander)
+- [oostbroek]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - we spelen [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - in [nevele]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
@@ -138,6 +149,7 @@ data/lookup_tables/datums.txt
 - hoe is het weer vandaag
 - gaat het regenen in ruiselede
 - ben jij een chatbot
+- wie is er keeper op 1 augustus
 
 
 
