@@ -61,9 +61,12 @@
     - match_form
     - form{"name": "match_form"}
 * misunderstanding
+    - utter_no_problem
     - action_deactivate_form
     - form{"name": null}
     - action_restart
+* afscheid
+    - utter_afscheid
 
 ## match toevoegen unhappy path 2
 * voeg_match_toe{"datum":"10 maart"}

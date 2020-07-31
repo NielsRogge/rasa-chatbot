@@ -1,17 +1,12 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: "nl"  # your two-letter language code
+language: "nl"
 pipeline:
-  - name: SpacyNLP
-  - name: SpacyTokenizer
-  - name: SpacyFeaturizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: "char_wb"
-    min_ngram: 1
-    max_ngram: 4
+  - name: HFTransformersNLP
+    model_weights: "wietsedv/bert-base-dutch-cased"
+    model_name: "bert"
+  - name: LanguageModelTokenizer
+  - name: LanguageModelFeaturizer
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
@@ -27,7 +22,7 @@ policies:
     epochs: 100
   - name: MappingPolicy
   - name: FallbackPolicy
-    nlu_threshold: 0.6
+    nlu_threshold: 0.4
     core_threshold: 0.3
     fallback_action_name: "action_default_fallback"
   - name: FormPolicy
