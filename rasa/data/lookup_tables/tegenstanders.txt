@@ -13,6 +13,7 @@ Club Brugge
 Anderlecht
 Manchester city
 Arsenal
+Chelsea
 Waasland-Beveren
 Westerlo
 KSV Surdac Gent	
@@ -21,22 +22,9 @@ ZVC Niche
 FC De Rougekes
 jacobs rangers
 scopo
-zvc 't leebeekje
+'t leebeekje
 azurri laarne
 fc de kampioenen
-SDC United Lochristi	
-FC Berdi	
-Herta Bierlijn	
-ZVC Kymkoi Superboys	
-ZVC Klussers	
-FC De Korpus	
-Koeketiene	
-Barbara Blazers	
-Deliverect	
-FC Café Sport	
-Thesle RE-United	
-SVD Gent	
-Forza Kwek
 Rede	
 The Lizzards	
 Cine Sala	
@@ -55,3 +43,60 @@ borussia dortmund
 fc doomkerke
 bevergem United
 azzuri laarne
+fc biercelona
+ZVC 't Leebeekje		
+KSA Sint Lieven	
+Forza Feesters	
+Lazio Stoma	
+ZVC Forza Noendries	
+Voet Plezier	
+Skouwe Danny's	
+Barcelona FC	
+ISC Hangover 	
+Jacobs Rangers FC
+Luchadores	
+FC Bad Kompany	
+Expected Toulouse'	
+Krokorico's	
+FC Lelijke Ratjes'	
+FC Kaktars	
+FC Vrolijke Vrienden	
+ZVC BACO	
+BBT FC
+United Lochristi	
+FC Berdi	
+Herta Bierlijn	
+ZVC Kymkoi Superboys	
+ZVC Klussers	
+FC De Korpus	
+Koeketiene	
+Barbara Blazers	
+Deliverect	
+Café Sport	
+Thesle RE-United	
+SVD Gent	
+Forza Kwek
+team de kwekkers
+Zvc Ambiorix Leuven
+Loco crew
+atletico leuven
+Voor Het Behoud
+SPJ united
+Zvc eendracht welle
+ZVC Wolfpack
+Zvc Houtem City
+FC alegria
+Panna-thinaikos
+olympic landen
+Zvc bermudas
+Titanic Reunited
+White Lions Scherpenheuvel
+Bianconeri Roma
+The Bulls
+ZVC La Doce Overmere
+De Diepenbeekse sjarels
+New Sparta
+Fc Weiken
+ZVC Black Wolves Ladies
+cercle Brugge
+brugge for the Win 

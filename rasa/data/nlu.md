@@ -27,6 +27,8 @@
 - thx
 
 ## intent:acknowledge
+- goed
+- good
 - super
 - nice
 - awesome
@@ -46,6 +48,7 @@
 - cancel
 
 ## intent:volgende_match
+- al nieuws over onze volgende match?
 - wanneer is de volgende match?
 - wanneer moeten we terug spelen
 - next game
@@ -55,6 +58,8 @@
 - welke dag is er terug match
 - volgende match please
 - volgende match plz
+- wanneer spelen de goal diggers
+- wanneer spelen jullie
 
 ## intent:specifieke_maand
 - welke matchen zijn er in [juli](maand)
@@ -89,6 +94,12 @@ data/lookup_tables/maanden.txt
 - [12 oktober](datum) match tegen [team jess](tegenstander)
 - maandagavond [27 07](datum) kan [scopo](tegenstander) tegen ons
 - we spelen tegen [De Buikbierkes](tegenstander)
+- we spelen [thuis](locatie) tegen [mandel united](tegenstander)
+- nieuwe match tegen [manchester united](tegenstander), thuis op [18 februari](datum)
+- op zondag [14 oktober](datum) spelen de goal diggers tegen [Forza Kwek](tegenstander)
+- er is een match voorzien tegen [United Lochristi](tegenstander), [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
+- volgende match van de goal diggers is op het veld van [Skouwe Danny's](tegenstander). Locatie: [Hal 1 Laarne](locatie)
+- we spelen een match tegen [borussia dortmund](tegenstander) in [Sporthal Overmere](locatie)
 
 ## lookup:datum
 data/lookup_tables/datums.txt
@@ -96,11 +107,15 @@ data/lookup_tables/datums.txt
 ## lookup:tegenstander
 data/lookup_tables/tegenstanders.txt
 
+## lookup:locatie
+data/lookup_tables/locaties.txt
+
 ## intent:inform
 - [10 januari](datum)
 - [16 februari](datum)
 - [4 maart](datum)
 - [19 april](datum)
+- [1 mei](datum)
 - [28 mei](datum)
 - [2 juni](datum)
 - [23 juli](datum)
@@ -109,6 +124,7 @@ data/lookup_tables/tegenstanders.txt
 - [2 oktober](datum)
 - [18 november](datum)
 - [27 december](datum)
+- [12 december](datum)
 - [15u](uur)
 - [16 uur](uur)
 - om [18 uur](uur)
@@ -120,9 +136,13 @@ data/lookup_tables/tegenstanders.txt
 - [21u30](uur)
 - [22 u](uur)
 - [forza feesters](tegenstander)
+- [Café Sport](tegenstander)
+- [KSV Surdac Gent](tegenstander)
 - [jacobs rangers](tegenstander)
 - [fc de rougekes](tegenstander)
 - [voet plezier](tegenstander)
+- [Golden Boys](tegenstander)
+- [team de kwekkers](tegenstander)
 - [scopo](tegenstander)
 - tegen [biercelona](tegenstander)
 - [borussia dortmund](tegenstander)
@@ -136,20 +156,28 @@ data/lookup_tables/tegenstanders.txt
 - [sporthal oostbroek]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - [oostbroek nevele]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - [nevele]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
-- [rozenbroeken gent](locatie)
-- [rozenbroeken](locatie)
+- [rozenbroeken gent]{"entity": "locatie", "value": "Rozenbroeken Gent"}
+- [rozenbroeken]{"entity": "locatie", "value": "Rozenbroeken Gent"}
 - het [gusb gent](locatie)
 - [sportoase leuven](locatie)
 - [tolhuis gent](locatie)
-- [sint-lievenscollege gent](locatie)
+- [Sint-Lievenscollege Gent](locatie)
 - [college melle](locatie)
 - [keiskant drongen](locatie)
+- [Technologiecampus KUL Gent](locatie)
+- [Hekers Zwijnaarde](locatie)
+- [Sporthal St-Martens-Latem](locatie)
+- [Bourgoyen Mariakerke](locatie)
+- [Sint-Leocollege Hemelsdaele](locatie)
+- [zaal Fitlink](locatie)
 
 ## intent:out_of_scope
 - hoe is het weer vandaag
 - gaat het regenen in ruiselede
 - ben jij een chatbot
 - wie is er keeper op 1 augustus
+- gaat het regenen op 14 juni
+- wie is de beste speler van de goal diggers
 
 
 
