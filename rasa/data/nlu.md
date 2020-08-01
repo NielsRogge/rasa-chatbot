@@ -80,23 +80,24 @@ data/lookup_tables/maanden.txt
 
 ## intent:voeg_match_toe
 - nieuwe match
-- ik zou graag een nieuwe match toevoegen
-- [12 oktober](datum) spelen we [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"} tegen [Bevergem United](tegenstander)
-- ik had graag de volgende match toegevoegd: zaterdag [12 augustus 2020](datum) tegen [fc doomkerke](tegenstander) 
-- we spelen een match tegen [jacobs rangers](tegenstander), [27 mei](datum) om [15u](uur)
-- we spelen tegen [fc de rougekes](tegenstander)
-- is het mogelijk een nieuwe match toe te voegen
 - kan ik een match toevoegen
+- ik zou graag een nieuwe match toevoegen
+- [5 januari](datum) match tegen [team jess](tegenstander)
+- nieuwe match tegen [manchester united](tegenstander), thuis op [18 februari](datum)
+- is het mogelijk een nieuwe match toe te voegen op [16 maart](datum)
+- op zondag [14 april](datum) spelen de goal diggers tegen [Forza Kwek](tegenstander)
+- we spelen een match tegen [jacobs rangers](tegenstander), [27 mei](datum) om [15u](uur)
 - we spelen [23 juni](datum) tegen [azurri laarne](tegenstander)
+- maandagavond [27 juli](datum) kan [scopo](tegenstander) tegen ons
+- ik had graag de volgende match toegevoegd: zaterdag [12 augustus 2020](datum) tegen [fc doomkerke](tegenstander) 
+- [25 september](datum) spelen we een wedstrijd tegen [Koeketiene](tegenstander) om [18 uur](uur)
 - de volgende wedstrijd is vrijdag [3 oktober](datum)
-- er is een match gepland tegen [zvc 't leebeekje](tegenstander)
+- [12 november](datum) spelen we [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"} tegen [Bevergem United](tegenstander)
 - zaterdag [14 december](datum) spelen we tegen [KSV Surdac Gent](tegenstander)
-- [12 oktober](datum) match tegen [team jess](tegenstander)
-- maandagavond [27 07](datum) kan [scopo](tegenstander) tegen ons
+- we spelen tegen [fc de rougekes](tegenstander)
+- er is een match gepland tegen [zvc 't leebeekje](tegenstander)
 - we spelen tegen [De Buikbierkes](tegenstander)
 - we spelen [thuis](locatie) tegen [mandel united](tegenstander)
-- nieuwe match tegen [manchester united](tegenstander), thuis op [18 februari](datum)
-- op zondag [14 oktober](datum) spelen de goal diggers tegen [Forza Kwek](tegenstander)
 - er is een match voorzien tegen [United Lochristi](tegenstander), [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - volgende match van de goal diggers is op het veld van [Skouwe Danny's](tegenstander). Locatie: [Hal 1 Laarne](locatie)
 - we spelen een match tegen [borussia dortmund](tegenstander) in [Sporthal Overmere](locatie)
