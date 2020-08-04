@@ -32,9 +32,12 @@ class ActionZoekVolgendeMatch(Action):
          # filter rows 
          data_row = data[data.Datum >= pd.Timestamp.now()].iloc[0]
 
-         if data_row is not None:
-            message = "De volgende match is {0} om {1} uur, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
-            message += " Locatie: {0}".format(data_row.Locatie)
+         if data_row is not None and data_row.Datum.minute == 0:
+             message = "De volgende match is {0} om {1} uur, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
+             message += " Locatie: {0}".format(data_row.Locatie)
+         elif data_row is not None:
+             message = "De volgende match is {0} om {1}u{2}, tegen {3}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Datum.minute, data_row.Tegenstander)
+             message += " Locatie: {0}".format(data_row.Locatie)
          else:
              message = "Er zijn momenteel geen matchen gepland."
          
@@ -83,16 +86,20 @@ class ActionZoekSpecifiekeMaand(Action):
          # read in data
          data = pd.read_excel("Matchen.xlsx")
          # filter rows
+         data = data[data.Datum >= pd.Timestamp.now()]
          rows = data[data.Datum.dt.month == months[month_normalized]]
 
          if len(rows) == 0:
              message = "Er zijn momenteel geen matchen gepland in {}.".format(month_normalized)
          else:
             message = "In " + month_normalized + " staat het volgende gepland:\n"
-            for x in rows.iterrows():
-                data_row = x[1]
-                message += "- {0} om {1} uur, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
-                message += " Locatie: {0}".format(data_row.Locatie) + "\n"
+            for i, data_row in rows.iterrows():
+                if data_row.Datum.minute == 0:
+                    message += "- {0} om {1} uur, tegen {2}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Tegenstander)
+                    message += " Locatie: {0}".format(data_row.Locatie) + "\n"
+                else:
+                    message += "- {0} om {1}u{2}, tegen {3}.".format(format_date(data_row.Datum, format='full', locale='nl'), data_row.Datum.hour, data_row.Datum.minute, data_row.Tegenstander)
+                    message += " Locatie: {0}".format(data_row.Locatie) + "\n"
          
          dispatcher.utter_message(message)
 
