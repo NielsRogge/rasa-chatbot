@@ -9,7 +9,7 @@ Man-chest-hair United
 Gentbrugge Allstars	
 Bayer Leverkusen 
 Vuve Barree	
-Club Brugge
+club brugge
 Anderlecht
 Manchester city
 Arsenal
@@ -19,7 +19,7 @@ Westerlo
 KSV Surdac Gent	
 Fsc Emrata	
 ZVC Niche	
-FC De Rougekes
+fC de rougekes
 jacobs rangers
 scopo
 't leebeekje
@@ -46,7 +46,7 @@ azzuri laarne
 fc biercelona
 ZVC 't Leebeekje		
 KSA Sint Lieven	
-Forza Feesters	
+forza feesters	
 Lazio Stoma	
 ZVC Forza Noendries	
 Voet Plezier	

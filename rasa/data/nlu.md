@@ -137,11 +137,13 @@ data/lookup_tables/locaties.txt
 - [21u30](uur)
 - [22 u](uur)
 - [forza feesters](tegenstander)
+- [club brugge](tegenstander) 
+- [anderlecht](tegenstander)
 - [Café Sport](tegenstander)
 - [KSV Surdac Gent](tegenstander)
 - [jacobs rangers](tegenstander)
 - [fc de rougekes](tegenstander)
-- [voet plezier](tegenstander)
+- [Voet Plezier](tegenstander)
 - [Golden Boys](tegenstander)
 - [team de kwekkers](tegenstander)
 - [scopo](tegenstander)
@@ -149,6 +151,8 @@ data/lookup_tables/locaties.txt
 - [borussia dortmund](tegenstander)
 - [team jess](tegenstander)
 - [fc de kampioenen](tegenstander)
+- [P&V Youngboys](tegenstander)
+- [azurri laarne](tegenstander)
 - [oostbroek]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - we spelen [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}
 - [thuis]{"entity": "locatie", "value": "Sporthal Oostbroek Nevele"}

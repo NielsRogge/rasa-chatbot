@@ -7,6 +7,7 @@ pipeline:
     model_name: "bert"
   - name: LanguageModelTokenizer
   - name: LanguageModelFeaturizer
+  - name: RegexFeaturizer
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
